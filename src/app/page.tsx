@@ -1,5 +1,9 @@
 /** @format */
 
 export default function HomePage() {
-  return <h1>Olá de dentro de page.tsx</h1>
+  return (
+    <h1 className='text-xl font-bold text-blog hover:text-white hover:bg-blue-100 transition duration-300'>
+      Olá de dentro de page.tsx
+    </h1>
+  )
 }
