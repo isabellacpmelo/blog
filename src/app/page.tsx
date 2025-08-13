@@ -1,14 +1,24 @@
 /** @format */
 
-import { Header } from '@/components/Header'
+import { PostsList } from '@/components/PostsList'
 import { SpinLoader } from '@/components/SpinLoader'
+import { Suspense } from 'react'
 
-export default function HomePage() {
-  console.log('Home Page')
-
+export default async function HomePage() {
   return (
     <div>
-      <SpinLoader containerClasses='min-h-40' />
+      <header>
+        <h1 className='text-6xl font-bold text-center py-8'>
+          {' '}
+          Aqui é a HEADER
+        </h1>
+      </header>
+      <Suspense fallback={<SpinLoader />}>
+        <PostsList />
+      </Suspense>
+      <footer>
+        <p className='text-6xl font-bold text-center py-8'> Aqui é o FOOTER</p>
+      </footer>
     </div>
   )
 }
