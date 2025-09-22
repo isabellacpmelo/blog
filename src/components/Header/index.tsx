@@ -1,11 +1,11 @@
 /** @format */
-'use Client'
 
 export function Header() {
-  console.log('Header')
   return (
-    <h1 className='text-xl font-bold text-blog hover:text-white hover:bg-blue-100 transition duration-300'>
-      Olá de dentro de page.tsx
-    </h1>
+    <header>
+      <h1 className='text-4xl/normal sm:text-5xl/normal md:text-6xl lg:text-7xl/normal font-extrabold py-6 sm:py-8 md:py-10 lg:py-12'>
+        <a href='#'>The Blog</a>
+      </h1>
+    </header>
   )
 }
