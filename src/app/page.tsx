@@ -4,10 +4,9 @@ import { Container } from '@/components/Container'
 import { Header } from '@/components/Header'
 import { PostsList } from '@/components/PostsList'
 import { SpinLoader } from '@/components/SpinLoader'
-import Link from 'next/link'
-import Image from 'next/image'
 import { Suspense } from 'react'
 import PostHead from '@/components/PostHeading'
+import PostCoverImage from '@/components/PostCoverImage'
 
 export default async function HomePage() {
   return (
@@ -15,16 +14,16 @@ export default async function HomePage() {
       <Header />
 
       <section className='grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 group'>
-        <Link href='#' className='w-full h-full overflow-hidden rounded-xl'>
-          <Image
-            className='w-full h-full object-cover object-center group-hover:scale-105'
-            src='/images/bryen_0.png'
-            width={1200}
-            height={720}
-            alt='Titulo do post'
-            priority
-          />
-        </Link>
+        <PostCoverImage
+          linkProps={{ href: '#', className: 'opacity-100' }}
+          imageProps={{
+            src: '/images/bryen_0.png',
+            width: 1200,
+            height: 720,
+            priority: true,
+            alt: 'Titulo do post',
+          }}
+        />
         <div className='flex flex-col gap-3 sm:justify-center'>
           <time className='text-slate-600 text-sm/tight' dateTime='2025-04-20'>
             20/04/2025 10:00
