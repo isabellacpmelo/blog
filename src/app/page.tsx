@@ -7,6 +7,7 @@ import { SpinLoader } from '@/components/SpinLoader'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Suspense } from 'react'
+import PostHead from '@/components/PostHeading'
 
 export default async function HomePage() {
   return (
@@ -28,9 +29,9 @@ export default async function HomePage() {
           <time className='text-slate-600 text-sm/tight' dateTime='2025-04-20'>
             20/04/2025 10:00
           </time>
-          <h1 className='text-2xl/tight font-extrabold sm:text-4xl'>
-            <Link href='#'>Lorem ipsum dolor sit amet consectetur</Link>
-          </h1>
+          <PostHead as='h1' href='#'>
+            Lorem ipsum dolor sit amet consectetur
+          </PostHead>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
             animi vitae? Incidunt eos error beatae atque nesciunt deserunt
