@@ -1,5 +1,3 @@
-/** @format */
-
 type SpinLoaderProps = {
   className?: string
 }

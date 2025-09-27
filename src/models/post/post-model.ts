@@ -1,5 +1,3 @@
-/** @format */
-
 export type PostModel = {
   id: string
   title: string

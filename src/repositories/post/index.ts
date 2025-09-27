@@ -1,5 +1,3 @@
-/** @format */
-
 import { JsonPostRepository } from './json-post-repository'
 import { PostRepository } from './post-repository'
 

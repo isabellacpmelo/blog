@@ -1,5 +1,3 @@
-/** @format */
-
 type ContainerProps = {
   children: React.ReactNode
 }

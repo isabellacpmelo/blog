@@ -1,5 +1,3 @@
-/** @format */
-
 import { postRepository } from '@/repositories/post'
 import PostCoverImage from '../PostCoverImage'
 import PostHead from '../PostHeading'
@@ -10,11 +8,12 @@ export async function PostsList() {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
       {posts.map((post) => {
+        const postLink = `/post/${post.slug}`
         return (
           <div className='flex flex-col gap-4 group' key={post.id}>
             <PostCoverImage
               linkProps={{
-                href: `/post/${post.slug}`,
+                href: postLink,
                 className: 'opacity-100',
               }}
               imageProps={{
@@ -30,7 +29,7 @@ export async function PostsList() {
                 dateTime={post.createdAt}>
                 {post.createdAt}
               </time>
-              <PostHead href='#'>{post.title}</PostHead>
+              <PostHead href={postLink}>{post.title}</PostHead>
               <p>{post.excerpt}</p>
             </div>
           </div>
