@@ -1,28 +1,31 @@
 import PostCoverImage from '../PostCoverImage'
 import { PostSummary } from '../PostSummary'
+import { findAllPublicPosts } from '@/lib/post/queries'
 
-export default function PostFeatured() {
-  const slug = 'qualquer-coisa'
-  const postLink = `/post/${slug}`
+export async function PostFeatured() {
+  const posts = await findAllPublicPosts()
+  const post = posts[0]
+
+  const postLink = `/post/${post.slug}`
   return (
     <section className='grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 group'>
       <PostCoverImage
         linkProps={{ href: postLink, className: 'opacity-100' }}
         imageProps={{
-          src: '/images/bryen_0.png',
+          src: post.coverImageUrl,
           width: 1200,
           height: 720,
           priority: true,
-          alt: 'Titulo do post',
+          alt: post.title,
         }}
       />
 
       <PostSummary
         postLink={postLink}
         postHeading='h1'
-        createdAt='2025-03-30T07:11:33'
-        title='Como a tecnologia impacta nosso bem-estar'
-        excerpt='Também ajuda a organizar melhor os arquivos e componentes, o que facilita a manutenção do projeto no longo prazo.'
+        createdAt={post.createdAt}
+        title={post.title}
+        excerpt={post.excerpt}
       />
     </section>
   )
