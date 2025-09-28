@@ -1,5 +1,5 @@
 import { formatDateTime, formatDistanceToNow } from '@/utils/format-datetime'
-import PostHead from '../PostHeading'
+import { PostHead } from '../PostHeading'
 
 type PostSummaryProps = {
   postHeading: 'h1' | 'h2'

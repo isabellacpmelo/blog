@@ -5,11 +5,7 @@ type PostHeadProps = {
   href: string
   as?: 'h1' | 'h2'
 }
-export default function PostHead({
-  children,
-  href,
-  as: Tag = 'h2',
-}: PostHeadProps) {
+export function PostHead({ children, href, as: Tag = 'h2' }: PostHeadProps) {
   const headingClassesMap = {
     h1: 'text-2xl/tight sm:text-4xl font-extrabold',
     h2: 'text-2xl/tight font-bold',
