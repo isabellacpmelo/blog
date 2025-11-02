@@ -1,4 +1,4 @@
-import { InferSelectModel. InferInsertModel } from 'drizzle-orm'
+import { InferSelectModel, InferInsertModel } from 'drizzle-orm'
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 
 export const postsTable = sqliteTable('posts', {
