@@ -9,5 +9,6 @@ export async function revalidateExampleAction(formData: FormData) {
 
   // revalidatePath(`${path}`)
   // revalidateTag('randomuser')
-  revalidateTag('formatHourCached')
+  revalidateTag('posts')
+  revalidateTag('post-rotina-matinal-de-pessoas-altamente-eficazes')
 }

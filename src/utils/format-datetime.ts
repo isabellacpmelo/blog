@@ -3,8 +3,6 @@ import {
   formatDistanceToNow as dateFnsFormatDistanceToNow,
 } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
-import { cacheLife } from 'next/dist/server/use-cache/cache-life'
-import { cacheTag } from 'next/dist/server/use-cache/cache-tag'
 
 export function formatDateTime(rawDate: string): string {
   const date = new Date(rawDate)
@@ -25,12 +23,4 @@ export function formatHour(timestampMs: number): string {
   const date = new Date(timestampMs)
 
   return format(date, 'HH:mm:ss', { locale: ptBR })
-}
-
-export async function formatHourCached() {
-  'use cache'
-  cacheLife('seconds')
-  cacheTag('formatHourCached')
-
-  return formatHour(Date.now())
 }
